@@ -9,22 +9,17 @@ document.getElementById("upload").onchange = async function () {
     const file = this.files[0]
     if (!file) return
 
-    // Visa originalbild
     const img = new Image()
     const url = URL.createObjectURL(file)
     img.src = url
 
     img.onload = () => {
-
-        // Rensa canvas och rita originalbild
         ctx.clearRect(0, 0, canvas.width, canvas.height)
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
 
-        // Släpp URL-resursen
         URL.revokeObjectURL(url)
     }
 
-    // Skicka till backend
     const form = new FormData()
     form.append("image", file)
 
@@ -35,8 +30,8 @@ document.getElementById("upload").onchange = async function () {
 
     pixels = await res.json()
 
-    // Vänta så man hinner se bilden
-    setTimeout(startAnimation, 2000)
+    // A small wait so we can see the original picture
+    setTimeout(startAnimation, 1000)
 }
 
 function startAnimation(){
