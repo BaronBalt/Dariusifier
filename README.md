@@ -3,8 +3,6 @@ Upload any image and watch it turn into [Darius](https://www.instagram.com/dariu
 
 <img src="darius.gif" alt="Website preview" align="center" width="300">
 
-<br clear="right">
-
 ## What it does
 - Loads an input image
 - Rearranges pixels algorithmically
